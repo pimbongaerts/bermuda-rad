@@ -1,0 +1,16 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf sint_2b.vcf
+	--recode
+	--stdout
+	--remove-indv SIMJD6893H
+	--remove-indv SIMJS6720H
+
+Excluding individuals in 'exclude' list
+After filtering, kept 107 out of 109 Individuals
+Outputting VCF file...
+After filtering, kept 21098 out of a possible 21098 Sites
+Run Time = 1.00 seconds

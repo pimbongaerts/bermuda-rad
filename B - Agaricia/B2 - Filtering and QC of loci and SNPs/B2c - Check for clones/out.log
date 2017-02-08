@@ -1,0 +1,17 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf afra_2b.vcf
+	--exclude samples_to_remove.txt
+	--mac 1
+	--min-alleles 2
+	--recode
+	--stdout
+
+Excluding individuals in 'exclude' list
+After filtering, kept 97 out of 104 Individuals
+Outputting VCF file...
+After filtering, kept 5120 out of a possible 5123 Sites
+Run Time = 0.00 seconds

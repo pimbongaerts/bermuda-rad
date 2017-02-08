@@ -1,0 +1,69 @@
+$ Rscript differentiation.R sint_bi_2f.vcf popfile_pca_4b.csv #eff3ff #c6dbef #c6dbef
+Meta line 11 read in.
+All meta lines processed.
+Character matrix gt created.
+Character matrix gt rows: 7547
+Character matrix gt cols: 114
+skip: 0
+nrows: 7547
+row_num: 0
+
+Processed variant: 7547
+All variants processed
+
+Weir and Cockerham Fst and Fis:
+$FST
+[1] 0.0008113305
+
+$FIS
+[1] 0.2806109
+
+
+Expected heterozygosity (Hs) for each pop:
+       GD        GS        JD        JS        PD        PS        WD
+0.1618783 0.1635142 0.1622547 0.1660883 0.1622498 0.1627970 0.1620870
+
+G-statistic test for overall structure:
+Monte-Carlo test
+Call: gstat.randtest(x = coral.genind.noNA, pop = NULL, method = "global",
+    nsim = 99)
+
+Observation: 107590.7
+
+Based on 99 replicates
+Simulated p-value: 0.3
+Alternative hypothesis: greater
+
+     Std.Obs  Expectation     Variance
+5.463167e-01 1.058580e+05 1.005967e+07
+
+G-statistic test for overall structure - eastern pops only:
+Monte-Carlo test
+Call: gstat.randtest(x = coral.genind.eastpops.noNA, pop = NULL, method = "global",
+    nsim = 99)
+
+Observation: 91105.17
+
+Based on 99 replicates
+Simulated p-value: 0.17
+Alternative hypothesis: greater
+
+     Std.Obs  Expectation     Variance
+1.124875e+00 8.804102e+04 7.420139e+06
+
+Pairwise Fst when averaged over all loci (without NA):
+       Habt.G        Habt.J        Habt.P       Shal.GJ       Shal.JP
+-0.0010787434 -0.0014363090 -0.0009118337 -0.0002122199 -0.0011505544
+      Shal.GP       Deep.GJ       Deep.JP       Deep.GP       West.GW
+-0.0013791576 -0.0020147638  0.0003923556 -0.0006621781 -0.0025852681
+      West.JW       West.PW
+-0.0012456374 -0.0007682172
+
+Pairwise Fst:
+           1          2          3          4          5          6
+2 0.02849031
+3 0.03097026 0.02924617
+4 0.03033748 0.02866072 0.03033715
+5 0.03020273 0.02845650 0.03150790 0.02851057
+6 0.02791249 0.02463953 0.02750751 0.02655480 0.02663476
+7 0.02945874 0.02848730 0.03148605 0.03001721 0.02977629 0.02716061

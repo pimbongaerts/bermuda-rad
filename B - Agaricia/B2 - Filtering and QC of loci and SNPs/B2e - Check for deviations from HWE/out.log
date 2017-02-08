@@ -1,0 +1,14 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf afra_2e_temp1.vcf
+	--exclude-positions afra_2e_elimpos.txt
+	--recode
+	--stdout
+
+After filtering, kept 97 out of 97 Individuals
+Outputting VCF file...
+After filtering, kept 2573 out of a possible 2906 Sites
+Run Time = 0.00 seconds

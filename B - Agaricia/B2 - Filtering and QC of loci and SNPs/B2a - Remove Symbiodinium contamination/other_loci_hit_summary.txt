@@ -1,0 +1,21 @@
+   1 Actinobacteria
+   2 Annelida
+   5 Apicomplexa
+  16 Arthropoda
+   4 Ascomycota
+   1 Bacteroidetes
+   3 Basidiomycota
+   3 Brachiopoda
+ 109 Chordata
+1375 Cnidaria
+   6 Echinodermata
+   1 Firmicutes
+   4 Hemichordata
+  12 Mollusca
+  12 NOT_FOUND
+  14 Nematoda
+  17 Platyhelminthes
+   2 Priapulida
+ 422 Proteobacteria
+   1 Rotifera
+  10 Streptophyta

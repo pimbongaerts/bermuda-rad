@@ -1,0 +1,66 @@
+
+Using the parameter settings in the file: 
+''sint_2f_1470544695/clumpp_K5.paramfile''
+
+Parameter settings
+----------------------- Main parameters -------------------------
+DATATYPE = 0
+INDFILE = sint_2f_1470544695/clumpp_K5.ind
+POPFILE = 
+OUTFILE = sint_2f_1470544695/clumpp_K5.out
+MISCFILE = sint_2f_1470544695/clumpp_K5.misc
+K = 5
+C = 105
+R = 10
+M = 2
+W = 1
+S = 2
+- Additional options for the Greedy and LargeKGreedy algorithms -
+GREEDY_OPTION = 2
+REPEATS = 1000
+PERMUTATIONFILE = 
+----------------------- Optional outputs ------------------------
+PRINT_PERMUTED_DATA = 2
+PERMUTED_DATAFILE = sint_2f_1470544695/clumpp_K5_perm
+PRINT_EVERY_PERM = 0
+EVERY_PERMFILE = 
+PRINT_RANDOM_INPUTORDER = 0
+RANDOM_INPUTORDERFILE = 
+----------------------- Advanced options ------------------------
+OVERRIDE_WARNINGS = 0
+ORDER_BY_RUN = 1
+
+
+In total, 1000 configurations of runs and clusters will be tested.
+
+Results
+------------------------------
+The highest value of H' is: 0.44664565922628
+
+The list of permutations of the clusters that produces that
+H' value is (runs are listed sequentially on separate rows)
+
+1 2 3 4 5 
+1 2 3 4 5 
+1 5 2 3 4 
+2 4 3 1 5 
+1 3 5 4 2 
+1 4 3 2 5 
+3 5 4 2 1 
+4 3 2 5 1 
+3 5 4 1 2 
+1 3 5 4 2 
+
+The pairwise G' values for each pair of runs where the clusters
+of each run are permuted according to the list of permutations above
+
+1.0000 0.4057 0.4439 0.5079 0.5263 0.4162 0.5250 0.4044 0.5130 0.4628 
+0.4057 1.0000 0.4134 0.3299 0.4201 0.4224 0.4833 0.4057 0.5111 0.3576 
+0.4439 0.4134 1.0000 0.4198 0.4266 0.3909 0.5136 0.3432 0.5199 0.4357 
+0.5079 0.3299 0.4198 1.0000 0.5043 0.3813 0.4460 0.3244 0.4413 0.3994 
+0.5263 0.4201 0.4266 0.5043 1.0000 0.4583 0.4686 0.3679 0.5206 0.4627 
+0.4162 0.4224 0.3909 0.3813 0.4583 1.0000 0.4484 0.4127 0.4862 0.4447 
+0.5250 0.4833 0.5136 0.4460 0.4686 0.4484 1.0000 0.4634 0.7153 0.4504 
+0.4044 0.4057 0.3432 0.3244 0.3679 0.4127 0.4634 1.0000 0.4569 0.3836 
+0.5130 0.5111 0.5199 0.4413 0.5206 0.4862 0.7153 0.4569 1.0000 0.4643 
+0.4628 0.3576 0.4357 0.3994 0.4627 0.4447 0.4504 0.3836 0.4643 1.0000 

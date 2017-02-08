@@ -1,0 +1,65 @@
+# BLASTN 2.2.29+
+# Query: 289
+# RID: UFYYGGB0016
+# Database: nt
+# 0 hits found
+# BLASTN 2.2.29+
+# Query: 1805
+# RID: UFYYGGB0016
+# Database: nt
+# 0 hits found
+# BLASTN 2.2.29+
+# Query: 2130
+# RID: UFYYGGB0016
+# Database: nt
+# 0 hits found
+# BLASTN 2.2.29+
+# Query: 3523
+# RID: UFYYGGB0016
+# Database: nt
+# 0 hits found
+# BLASTN 2.2.29+
+# Query: 4011
+# RID: UFYYGGB0016
+# Database: nt
+# 0 hits found
+# BLASTN 2.2.29+
+# Query: 4482
+# RID: UFYYGGB0016
+# Database: nt
+# Fields: query id, subject id, alignment length, identical, % identity, evalue, bit score, subject tax ids, subject title
+# 1 hits found
+4482	gi|1005475812|ref|XM_015919182.1|	56	51	91.07	1e-11	78.8	70779	PREDICTED: Acropora digitifera phospholipase D1-like (LOC107352864), mRNA
+# BLASTN 2.2.29+
+# Query: 7826
+# RID: UFYYGGB0016
+# Database: nt
+# 0 hits found
+# BLASTN 2.2.29+
+# Query: 8374
+# RID: UFYYGGB0016
+# Database: nt
+# Fields: query id, subject id, alignment length, identical, % identity, evalue, bit score, subject tax ids, subject title
+# 1 hits found
+8374	gi|1005430681|ref|XM_015897578.1|	50	47	94.00	5e-11	77.0	70779	PREDICTED: Acropora digitifera uncharacterized LOC107332840 (LOC107332840), mRNA
+# BLASTN 2.2.29+
+# Query: 9087
+# RID: UFYYGGB0016
+# Database: nt
+# 0 hits found
+# BLASTN 2.2.29+
+# Query: 9612
+# RID: UFYYGGB0016
+# Database: nt
+# 0 hits found
+# BLASTN 2.2.29+
+# Query: 11339
+# RID: UFYYGGB0016
+# Database: nt
+# 0 hits found
+# BLASTN 2.2.29+
+# Query: 11484
+# RID: UFYYGGB0016
+# Database: nt
+# 0 hits found
+# BLAST processed 12 queries

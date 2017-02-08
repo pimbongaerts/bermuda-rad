@@ -1,0 +1,16 @@
+species,pop,chl_a,chl_ab,chl_b,total,depth,location
+afra,GD,15,0,0,15,deep,Gurnet
+afra,GS,14,0,0,14,shallow,Gurnet
+afra,JD,15,0,0,15,deep,John Smith
+afra,JS,14,0,0,14,shallow,John Smith
+afra,PD,15,0,0,15,deep,Princess
+afra,PS,13,0,0,13,shallow,Princess
+afra,PX,2,0,0,2,deep,Princess
+afra,WD,14,0,0,14,deep,Western Cut
+sint,GD,12,1,0,13,deep,Gurnet
+sint,GS,14,1,0,15,shallow,Gurnet
+sint,JD,11,1,2,14,deep,John Smith
+sint,JS,10,2,0,12,shallow,John Smith
+sint,PD,12,0,0,12,deep,Princess
+sint,PS,8,0,3,11,shallow,Princess
+sint,WD,8,0,1,9,deep,Western Cut

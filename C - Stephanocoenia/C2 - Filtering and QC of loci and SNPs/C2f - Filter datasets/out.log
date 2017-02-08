@@ -1,0 +1,18 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf sint_2d.vcf
+	--keep popfile_withCU_2d.txt
+	--max-alleles 2
+	--min-alleles 2
+	--positions filtered_snps.txt
+	--recode
+	--stdout
+
+Keeping individuals in 'keep' list
+After filtering, kept 107 out of 107 Individuals
+Outputting VCF file...
+After filtering, kept 7599 out of a possible 7810 Sites
+Run Time = 0.00 seconds

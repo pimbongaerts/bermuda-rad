@@ -1,0 +1,66 @@
+
+Using the parameter settings in the file: 
+''sint_bi_2f_fst90_100_1470704298/clumpp_K5.paramfile''
+
+Parameter settings
+----------------------- Main parameters -------------------------
+DATATYPE = 0
+INDFILE = sint_bi_2f_fst90_100_1470704298/clumpp_K5.ind
+POPFILE = 
+OUTFILE = sint_bi_2f_fst90_100_1470704298/clumpp_K5.out
+MISCFILE = sint_bi_2f_fst90_100_1470704298/clumpp_K5.misc
+K = 5
+C = 105
+R = 10
+M = 2
+W = 1
+S = 2
+- Additional options for the Greedy and LargeKGreedy algorithms -
+GREEDY_OPTION = 2
+REPEATS = 1000
+PERMUTATIONFILE = 
+----------------------- Optional outputs ------------------------
+PRINT_PERMUTED_DATA = 2
+PERMUTED_DATAFILE = sint_bi_2f_fst90_100_1470704298/clumpp_K5_perm
+PRINT_EVERY_PERM = 0
+EVERY_PERMFILE = 
+PRINT_RANDOM_INPUTORDER = 0
+RANDOM_INPUTORDERFILE = 
+----------------------- Advanced options ------------------------
+OVERRIDE_WARNINGS = 0
+ORDER_BY_RUN = 1
+
+
+In total, 1000 configurations of runs and clusters will be tested.
+
+Results
+------------------------------
+The highest value of H' is: 0.61658678722765
+
+The list of permutations of the clusters that produces that
+H' value is (runs are listed sequentially on separate rows)
+
+1 2 3 4 5 
+3 2 1 5 4 
+1 5 4 2 3 
+3 4 1 5 2 
+2 4 1 5 3 
+3 1 2 5 4 
+2 1 4 3 5 
+5 4 2 1 3 
+4 1 3 5 2 
+3 1 4 5 2 
+
+The pairwise G' values for each pair of runs where the clusters
+of each run are permuted according to the list of permutations above
+
+1.0000 0.6627 0.5572 0.6612 0.5240 0.6670 0.6628 0.6586 0.9125 0.6518 
+0.6627 1.0000 0.4571 0.9424 0.6627 0.6718 0.9402 0.6628 0.6563 0.5268 
+0.5572 0.4571 1.0000 0.4542 0.3725 0.4574 0.4489 0.4440 0.5619 0.5604 
+0.6612 0.9424 0.4542 1.0000 0.6663 0.6689 0.9314 0.6615 0.6551 0.5224 
+0.5240 0.6627 0.3725 0.6663 1.0000 0.5313 0.6543 0.5223 0.5207 0.4202 
+0.6670 0.6718 0.4574 0.6689 0.5313 1.0000 0.6724 0.6688 0.6651 0.5302 
+0.6628 0.9402 0.4489 0.9314 0.6543 0.6724 1.0000 0.6672 0.6564 0.5286 
+0.6586 0.6628 0.4440 0.6615 0.5223 0.6688 0.6672 1.0000 0.6543 0.5305 
+0.9125 0.6563 0.5619 0.6551 0.5207 0.6651 0.6564 0.6543 1.0000 0.6413 
+0.6518 0.5268 0.5604 0.5224 0.4202 0.5302 0.5286 0.5305 0.6413 1.0000 

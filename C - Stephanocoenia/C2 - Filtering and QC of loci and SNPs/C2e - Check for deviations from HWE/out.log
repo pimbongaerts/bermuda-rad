@@ -1,0 +1,14 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf sint_2e_temp2.vcf
+	--exclude-positions sint_2e_elimpos.txt
+	--recode
+	--stdout
+
+After filtering, kept 105 out of 105 Individuals
+Outputting VCF file...
+After filtering, kept 7707 out of a possible 7748 Sites
+Run Time = 0.00 seconds

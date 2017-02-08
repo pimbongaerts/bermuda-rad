@@ -1,0 +1,16 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf sint_2a.vcf
+	--exclude-positions eliminate_2b.txt
+	--min-alleles 2
+	--recode
+	--stdout
+
+Eighth Header entry should be INFO: INFO    
+After filtering, kept 109 out of 109 Individuals
+Outputting VCF file...
+After filtering, kept 27149 out of a possible 48373 Sites
+Run Time = 1.00 seconds

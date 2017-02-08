@@ -1,0 +1,69 @@
+
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+CLUMPP by M. Jakobsson and N. A. Rosenberg (2007)
+              Code by M. Jakobsson
+           Version 1.1.2 (May 2009)
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+
+Parameter settings 
+----------------------- Main parameters -------------------------
+DATATYPE = 0
+INDFILE = afra_neut_3d_1470627679/clumpp_K3.ind
+POPFILE = 
+OUTFILE = afra_neut_3d_1470627679/clumpp_K3.out
+MISCFILE = afra_neut_3d_1470627679/clumpp_K3.misc
+K = 3
+C = 97
+R = 10
+M = 2
+W = 0
+S = 2
+- Additional options for the Greedy and LargeKGreedy algorithms -
+GREEDY_OPTION = 2
+REPEATS = 1000
+PERMUTATIONFILE = 
+----------------------- Optional outputs ------------------------
+PRINT_PERMUTED_DATA = 2
+PERMUTED_DATAFILE = afra_neut_3d_1470627679/clumpp_K3_perm
+PRINT_EVERY_PERM = 0
+EVERY_PERMFILE = 
+PRINT_RANDOM_INPUTORDERFILE = 0
+RANDOM_INPUTORDERFILE = 
+----------------------- Advanced options ------------------------
+OVERRIDE_WARNINGS = 0
+ORDER_BY_RUN = 1
+
+
+In total, 1000 configurations of runs and clusters will be tested.
+
+Running... 
+----------------------------------
+Best estimate of H'  Repeat number (of 1000)
+0.964819805575694    1
+0.964819805575694    5
+
+
+Results 
+----------------------------------
+The highest value of H' is: 0.964819805575694
+
+The list of permutation of the clusters that produces that
+H' value is (each run is on a separate row)
+1 2 3 
+2 3 1 
+1 2 3 
+1 2 3 
+3 2 1 
+3 1 2 
+3 2 1 
+1 2 3 
+2 3 1 
+2 1 3 
+
+The program finished in (days:hours:minutes:seconds)
+0:0:0:0
+

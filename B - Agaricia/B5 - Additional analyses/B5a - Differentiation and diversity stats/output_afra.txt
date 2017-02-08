@@ -1,0 +1,119 @@
+$ Rscript differentiation.R afra_2f.vcf popfile_pca_4b.csv #bae4b3 #238b45 #74c476
+Meta line 11 read in.
+All meta lines processed.
+Character matrix gt created.
+Character matrix gt rows: 2635
+Character matrix gt cols: 106
+skip: 0
+nrows: 2635
+row_num: 0
+
+Processed variant: 2635
+All variants processed
+
+Weir and Cockerham Fst and Fis:
+$FST
+[1] 0.06998256
+
+$FIS
+[1] 0.488847
+
+
+Expected heterozygosity (Hs) for each pop:
+       GD        GS        JD        JS        PD        PS        WD
+0.1672369 0.1615541 0.1658039 0.1618625 0.1781947 0.1641213 0.2103866
+
+G-statistic test for overall structure:
+Monte-Carlo test
+Call: gstat.randtest(x = coral.genind.noNA, pop = NULL, method = "global",
+    nsim = 99)
+
+Observation: 56314.52
+
+Based on 99 replicates
+Simulated p-value: 0.01
+Alternative hypothesis: greater
+
+     Std.Obs  Expectation     Variance
+    20.97319  39710.50866 626753.48774
+
+G-statistic test for overall structure - eastern pops only:
+Monte-Carlo test
+Call: gstat.randtest(x = coral.genind.eastpops.noNA, pop = NULL, method = "global",
+    nsim = 99)
+
+Observation: 43589.48
+
+Based on 99 replicates
+Simulated p-value: 0.01
+Alternative hypothesis: greater
+
+     Std.Obs  Expectation     Variance
+    15.24963  32330.52455 545101.69050
+
+Pairwise Fst when averaged over all loci (without NA):
+     Habt.G      Habt.J      Habt.P     Shal.GJ     Shal.JP     Shal.GP
+0.044362993 0.058421089 0.044208650 0.003175759 0.012652416 0.013741802
+    Deep.GJ     Deep.JP     Deep.GP     West.GW     West.JW     West.PW
+0.011968014 0.011920970 0.001320425 0.041809349 0.041948989 0.034801295
+
+Pairwise Fst:
+           1          2          3          4          5          6
+2 0.08013806
+3 0.04999698 0.09408470
+4 0.07687531 0.04244536 0.09540889
+5 0.03295640 0.06640810 0.04102523 0.06377280
+6 0.08750017 0.05033273 0.10496044 0.04984853 0.07136143
+7 0.06846539 0.08666910 0.06682729 0.08322243 0.05380059 0.09108684
+
+Non-parametric Kruskal-Wallis to test for overall differences
+
+	Kruskal-Wallis rank sum test
+
+data:  fst_compare_melt$value by fst_compare_melt$X2
+Kruskal-Wallis chi-squared = 499.43, df = 3, p-value < 2.2e-16
+
+
+Non-parametric Wilcoxon: between-depths vs within-shallow
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  fst_compare_melt[fst_compare_melt$X2 == "between" | fst_compare_melt$X2 == "shallow", ]$value by fst_compare_melt[fst_compare_melt$X2 == "between" | fst_compare_melt$X2 == "shallow", ]$X2
+W = 20749000, p-value < 2.2e-16
+alternative hypothesis: true location shift is not equal to 0
+
+
+Non-parametric Wilcoxon: between-depths vs within-deep
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  fst_compare_melt[fst_compare_melt$X2 == "between" | fst_compare_melt$X2 == "deep", ]$value by fst_compare_melt[fst_compare_melt$X2 == "between" | fst_compare_melt$X2 == "deep", ]$X2
+W = 21537000, p-value < 2.2e-16
+alternative hypothesis: true location shift is not equal to 0
+
+
+Non-parametric Wilcoxon: within-shallow vs within-deep
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  fst_compare_melt[fst_compare_melt$X2 == "shallow" | fst_compare_melt$X2 == "deep", ]$value by fst_compare_melt[fst_compare_melt$X2 == "shallow" | fst_compare_melt$X2 == "deep", ]$X2
+W = 17487000, p-value = 0.5338
+alternative hypothesis: true location shift is not equal to 0
+
+
+Non-parametric Wilcoxon: between-westeast vs within-deep
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  fst_compare_melt[fst_compare_melt$X2 == "west" | fst_compare_melt$X2 == "deep", ]$value by fst_compare_melt[fst_compare_melt$X2 == "west" | fst_compare_melt$X2 == "deep", ]$X2
+W = 17196000, p-value < 2.2e-16
+alternative hypothesis: true location shift is not equal to 0
+
+
+Non-parametric Wilcoxon: between-depths vs between-westeast
+
+	Wilcoxon rank sum test with continuity correction
+
+data:  fst_compare_melt[fst_compare_melt$X2 == "between" | fst_compare_melt$X2 == "west", ]$value by fst_compare_melt[fst_compare_melt$X2 == "between" | fst_compare_melt$X2 == "west", ]$X2
+W = 21257000, p-value = 0.4399
+alternative hypothesis: true location shift is not equal to 0

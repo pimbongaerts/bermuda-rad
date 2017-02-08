@@ -1,0 +1,15 @@
+INFO  05-08 13:16:20,812 (PGDSpiderConfig.java:loadConfig:63)  -load PGDSpider configuration from: /Users/pim/programs/spider.conf.xml
+DEBUG 05-08 13:16:20,881 (ParserFactory.java:getParserInstance:156)  -New VcfParser instance
+DEBUG 05-08 13:16:20,901 (ParserFactory.java:getParserInstance:156)  -New VcfParser instance
+ERROR 05-08 13:16:20,910 (FileQuestionImpl.java:getInputStream:73)  -File: /Users/pim/Documents/Work Documents/Data/SEAVIEW - Bermuda/bermuda_rad/B - Agaricia/B2 - Filtering and QC of loci and SNPs/B2e - Check for deviations from HWE/popfile_noclones_2c.txt not found!
+DEBUG 05-08 13:16:20,914 (FileQuestionImpl.java:getInputStream:74)  -java.io.FileNotFoundException: /Users/pim/Documents/Work Documents/Data/SEAVIEW - Bermuda/bermuda_rad/B - Agaricia/B2 - Filtering and QC of loci and SNPs/B2e - Check for deviations from HWE/popfile_noclones_2c.txt (No such file or directory)
+java.io.FileNotFoundException: /Users/pim/Documents/Work Documents/Data/SEAVIEW - Bermuda/bermuda_rad/B - Agaricia/B2 - Filtering and QC of loci and SNPs/B2e - Check for deviations from HWE/popfile_noclones_2c.txt (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+	at ch.unibe.iee.cmpg.pgdspider.model.question.FileQuestionImpl.getInputStream(FileQuestionImpl.java:71)
+	at ch.unibe.iee.cmpg.pgdspider.model.parser.VcfParser.parse(VcfParser.java:320)
+	at ch.unibe.iee.cmpg.pgdspider.cli.CLIController.convert(CLIController.java:220)
+	at ch.unibe.iee.cmpg.pgdspider.PGDSpiderCli.main(PGDSpiderCli.java:31)
+INFO  05-08 13:16:34,486 (PGDSpiderConfig.java:loadConfig:63)  -load PGDSpider configuration from: /Users/pim/programs/spider.conf.xml
+DEBUG 05-08 13:16:34,528 (ParserFactory.java:getParserInstance:156)  -New VcfParser instance
+DEBUG 05-08 13:16:34,541 (ParserFactory.java:getParserInstance:156)  -New VcfParser instance

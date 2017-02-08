@@ -1,0 +1,10 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf sint_bi_2f_f0.8.vcf
+
+After filtering, kept 105 out of 105 Individuals
+After filtering, kept 1553 out of a possible 1553 Sites
+Run Time = 0.00 seconds

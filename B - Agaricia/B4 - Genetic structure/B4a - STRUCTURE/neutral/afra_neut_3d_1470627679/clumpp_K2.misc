@@ -1,0 +1,66 @@
+
+Using the parameter settings in the file: 
+''afra_neut_3d_1470627679/clumpp_K2.paramfile''
+
+Parameter settings
+----------------------- Main parameters -------------------------
+DATATYPE = 0
+INDFILE = afra_neut_3d_1470627679/clumpp_K2.ind
+POPFILE = 
+OUTFILE = afra_neut_3d_1470627679/clumpp_K2.out
+MISCFILE = afra_neut_3d_1470627679/clumpp_K2.misc
+K = 2
+C = 97
+R = 10
+M = 2
+W = 1
+S = 2
+- Additional options for the Greedy and LargeKGreedy algorithms -
+GREEDY_OPTION = 2
+REPEATS = 1000
+PERMUTATIONFILE = 
+----------------------- Optional outputs ------------------------
+PRINT_PERMUTED_DATA = 2
+PERMUTED_DATAFILE = afra_neut_3d_1470627679/clumpp_K2_perm
+PRINT_EVERY_PERM = 0
+EVERY_PERMFILE = 
+PRINT_RANDOM_INPUTORDER = 0
+RANDOM_INPUTORDERFILE = 
+----------------------- Advanced options ------------------------
+OVERRIDE_WARNINGS = 0
+ORDER_BY_RUN = 1
+
+
+In total, 1000 configurations of runs and clusters will be tested.
+
+Results
+------------------------------
+The highest value of H' is: 0.96889988452241
+
+The list of permutations of the clusters that produces that
+H' value is (runs are listed sequentially on separate rows)
+
+1 2 
+1 2 
+1 2 
+1 2 
+1 2 
+2 1 
+1 2 
+1 2 
+2 1 
+1 2 
+
+The pairwise G' values for each pair of runs where the clusters
+of each run are permuted according to the list of permutations above
+
+1.0000 0.9788 0.9660 0.9738 0.9747 0.9715 0.9614 0.9704 0.9744 0.9739 
+0.9788 1.0000 0.9692 0.9704 0.9707 0.9690 0.9640 0.9702 0.9674 0.9791 
+0.9660 0.9692 1.0000 0.9573 0.9705 0.9599 0.9793 0.9782 0.9642 0.9728 
+0.9738 0.9704 0.9573 1.0000 0.9636 0.9732 0.9506 0.9578 0.9678 0.9649 
+0.9747 0.9707 0.9705 0.9636 1.0000 0.9699 0.9659 0.9754 0.9784 0.9763 
+0.9715 0.9690 0.9599 0.9732 0.9699 1.0000 0.9518 0.9599 0.9668 0.9704 
+0.9614 0.9640 0.9793 0.9506 0.9659 0.9518 1.0000 0.9781 0.9620 0.9673 
+0.9704 0.9702 0.9782 0.9578 0.9754 0.9599 0.9781 1.0000 0.9687 0.9766 
+0.9744 0.9674 0.9642 0.9678 0.9784 0.9668 0.9620 0.9687 1.0000 0.9681 
+0.9739 0.9791 0.9728 0.9649 0.9763 0.9704 0.9673 0.9766 0.9681 1.0000 

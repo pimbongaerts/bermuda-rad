@@ -1,0 +1,3 @@
+INFO  05-08 13:33:00,087 (PGDSpiderConfig.java:loadConfig:63)  -load PGDSpider configuration from: /Users/pim/programs/spider.conf.xml
+DEBUG 05-08 13:33:00,134 (ParserFactory.java:getParserInstance:156)  -New VcfParser instance
+DEBUG 05-08 13:33:00,147 (ParserFactory.java:getParserInstance:156)  -New VcfParser instance

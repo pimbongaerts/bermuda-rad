@@ -1,0 +1,18 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf sint_2d.vcf
+	--mac 1
+	--min-alleles 2
+	--recode
+	--stdout
+	--remove-indv SICB155378H
+	--remove-indv SICB155507H
+
+Excluding individuals in 'exclude' list
+After filtering, kept 105 out of 107 Individuals
+Outputting VCF file...
+After filtering, kept 7758 out of a possible 7810 Sites
+Run Time = 0.00 seconds

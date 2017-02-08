@@ -1,0 +1,4 @@
+INFO  05-08 15:45:02,411 (PGDSpiderConfig.java:loadConfig:63)  -load PGDSpider configuration from: /Users/pim/programs/spider.conf.xml
+DEBUG 05-08 15:45:02,454 (ParserFactory.java:getParserInstance:156)  -New VcfParser instance
+DEBUG 05-08 15:45:02,466 (ParserFactory.java:getParserInstance:156)  -New VcfParser instance
+WARN  05-08 15:45:11,146 (GenepopWriter.java:parseAlignedSampleData:560)  -Data are converted to integers (A=100, T=110, G=120, C=130)!
