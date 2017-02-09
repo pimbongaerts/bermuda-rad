@@ -4,7 +4,7 @@
 
 *Electronic lab notebook author:* Pim Bongaerts
 
-![](Fieldwork photos/reduced_size/Emily's Pinnacles%2C Bermuda © The Ocean Agency%2C XL Catlin Seaview Survey%2C Christophe Bailhache.jpg)
+![](Fieldwork photos/reduced_size/emilyspinnacles1_christophe_bailhache.jpg)
 
 *Photograph*: © The Ocean Agency / XL Catlin Seaview Survey / Christophe Bailhache ([more photos](Fieldwork photos))
 
