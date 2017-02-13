@@ -63,6 +63,6 @@ Besides the Python scripts in the separate [RAD - Python scripts](https://github
 |[Arlecore](http://cmpg.unibe.ch/software/arlequin35/)|3.5.2.2|Executable (CL)|part of Arlequin package|
 |[Lositan](http://popgen.net/soft/lositan/)|1.0.0|Executable (GUI)||
 |[BayeScan](http://cmpg.unibe.ch/software/BayeScan/)|2.1|Executable (CL)||
-|[STRUCTURE](http://pritchardlab.stanford.edu/structure.html)|2.3.4|Executable (CL/GUI)|used with a [multi-threading wrapper](https://github.com/pimbongaerts/radseq/tree/master/structure_mp)|
+|[STRUCTURE](http://pritchardlab.stanford.edu/structure.html)|2.3.4|Executable (CL/GUI)|used with a [multi-threading wrapper](https://github.com/pimbongaerts/radseq/blob/master/structure_mp.py)|
 
 Additional R packages used for plotting [figures](D - Figures/README.md): [ggplot2](https://cran.r-project.org/package=ggplot2), [reshape2](https://cran.r-project.org/package=reshape2), [gridExtra](https://cran.r-project.org/package=gridExtra), [cowplot](https://cran.r-project.org/package=cowplot), [plyr](https://cran.r-project.org/package=plyr)
