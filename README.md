@@ -1,12 +1,10 @@
 # "Deep reefs are not universal refuges: reseeding potential varies among coral species"
 
-*Manuscript reference:* Bongaerts P, Riginos C, Brunner R, Englebert N, Smith SR, Hoegh-Guldberg O (2016) Deep reefs are not universal refuges: reseeding potential varies among coral species.
+*Manuscript reference:* Bongaerts P, Riginos C, Brunner R, Englebert N, Smith SR, Hoegh-Guldberg O (2016) Deep reefs are not universal refuges: reseeding potential varies among coral species. *Science Advances* 3:e1602373 [[DOI: 10.1126/sciadv.1602373](http://advances.sciencemag.org/content/3/2/e1602373)]
 
 *Electronic lab notebook author:* Pim Bongaerts
 
-![](Fieldwork photos/reduced_size/emilyspinnacles1_christophe_bailhache.jpg)
-
-*Photograph*: © The Ocean Agency / XL Catlin Seaview Survey / Christophe Bailhache ([more photos](Fieldwork photos))
+[![Manuscript](screenshot3.png)](http://advances.sciencemag.org/content/3/2/e1602373)
 
 ##Electronic lab notebook contents
 
