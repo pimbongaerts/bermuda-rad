@@ -8,7 +8,7 @@
 
 ## Electronic lab notebook contents
 
-**[A - *Symbiodinium*](/A - Symbiodinium)** - 
+**[A - *Symbiodinium*](A - Symbiodinium/)** - 
 Details the analysis of the sequence data for the FACS-isolated *Symbiodinium* that are used as subtraction datasets.
 
 **[B - *Agaricia*](/B - Agaricia/)** - 
