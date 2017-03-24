@@ -1,4 +1,4 @@
-#A - *Symbiodinium*
+# A - *Symbiodinium*
 *Contents:* Details the analysis of the sequence data for the FACS-isolated Symbiodinium that are used as subtraction datasets. *Notebook author:* Pim Bongaerts. 
 
 *[Click here to go back to the overview](https://github.com/pimbongaerts/bermuda-rad/)*
@@ -10,10 +10,10 @@
 	* [A2a - Filter loci to FASTA](#a2a---filter-loci-to-fasta)
 	* [A2b - Create blastn database](#a2b---create-blastn-database)
 
-##A1 - PyRAD clustering
+## A1 - PyRAD clustering
 Note: location of raw sequence data is referred to as `storage_server_path/...`.
 
-###A1a - Raw sequence data
+### A1a - Raw sequence data
 Replace barcodes of `fastq` files by actual sample names using [fastq_barcodes2samplenames.py](https://github.com/pimbongaerts/radseq/blob/master/fastq_barcodes2samplenames.py) script] (already done in NCBI SRA):
 	
 	$ fastq_barcodes2samplenames.py storage_server_path/symbiont_ref storage_server_path/sym_barcodes.txt
@@ -45,7 +45,7 @@ Details of the 15 sequenced *Symbiodinium* isolates:
 |SYSIDC6721.fastq.gz|DC6721|*Stephanocoenia intersepta*|Bermuda|13 m|146,130|
 |SYSIDC6911.fastq.gz|DC6911|*Stephanocoenia intersepta*|Bermuda|40 m|371,153|
 
-###A1b - PyRAD clustering
+### A1b - PyRAD clustering
 The first two steps of PyRAD are ran to filter reads, and discard those with >5 sites with a PHRED quality <20. The third step is ran to cluster within samples, so that in the next step singleton reads can be excluded.
 
 	$ pyrad -p params.txt -s123
@@ -66,8 +66,8 @@ Params file (only modified parameters shown; parameter 6 can be left empty for n
 	rad                       ## 11. Datatype: rad,gbs,pairgbs,pairddrad,(others:see docs)(all)
 
 
-##A2 - Blastn database
-###A2a - Filter loci to FASTA
+## A2 - Blastn database
+### A2a - Filter loci to FASTA
 Filtering the `.clustS.gz` output files created in **A1b - PyRAD clustering** to output a representative sequence (first one) for each cluster that had a minimum of 2 representatives [using [pyradclust2fasta.py](https://github.com/pimbongaerts/radseq/blob/master/pyradclust2fasta.py) script]. This excludes singletons: min. one unique sequence in cluster with size >= 2 or min. two distinct sequences in cluster with each size = 1.
 
 	$ pyradclust2fasta.py storage_server_path/symbiont_ref/clust.85 2 symbiont_ref_2a.fasta
@@ -103,7 +103,7 @@ Created a separate fasta just for *A. fragilis* and *S. intersepta* [using [pyra
 	SYSIDC6911	28,045	103,594
 	Total seqs in symbiont_ref_afra_sint.fasta: 106,328
 
-###A2b - Create blastn database
+### A2b - Create blastn database
 Remove gaps from FASTA before indexing:
 
 	$ sed 's/-//g' symbiont_ref_2a.fasta > symbiont_ref_nogaps_2b.fasta

@@ -6,7 +6,7 @@
 
 [![Manuscript](screenshot3.png)](http://advances.sciencemag.org/content/3/2/e1602373)
 
-##Electronic lab notebook contents
+## Electronic lab notebook contents
 
 **[A - *Symbiodinium*](A - Symbiodinium)** - 
 Details the analysis of the sequence data for the FACS-isolated *Symbiodinium* that are used as subtraction datasets.
@@ -26,7 +26,7 @@ Several custom scripts (other than those in *[RADseq script library](https://git
 **[F - Protocols](F - Protocols)** - 
 Details the lab protocols for gDNA isolation and fluorescence-activated cell sorting.
 
-###Additional resources
+### Additional resources
 
 **[Raw sequence data (NCBI SRA)](https://www.ncbi.nlm.nih.gov/bioproject/361144)** - Raw Illumina sequence data (fastq format) for the 109 *Stephanocoenia intersepta* and 104 *Agaricia fragilis* coral colonies sequenced in this study (accession code [PRJNA361144](https://www.ncbi.nlm.nih.gov/bioproject/361144)).
 
@@ -34,7 +34,7 @@ Details the lab protocols for gDNA isolation and fluorescence-activated cell sor
 
 **[Fieldwork Photos (Gallery)](Fieldwork photos)** - Several photos of the fieldwork in Bermuda
 
-##Explanation
+## Explanation
 Each (sub)heading in the electronic notebooks (listed above) refers to a directory in the repository, outlining the analysis workflow in sequential order.
 
 ![Screenshot](screenshot1.png)
@@ -43,7 +43,7 @@ Files are marked with a code referring to the directory/step where they were gen
 
 ![Screenshot](screenshot2.png)
 
-##Software and dependencies
+## Software and dependencies
 Besides the Python scripts in the separate [RAD - Python scripts](https://github.com/pimbongaerts/radseq) repository, the analyses depend on the following packages that need to be accessible through the `PATH` environmental variable:
 
 |Package|Version (used)|Type|Note|

@@ -1,41 +1,41 @@
-#B - Agaricia fragilis
+# B - Agaricia fragilis
 *Contents:* Details the processing and analyses of the *Agaricia fragilis* dataset, from raw sequences to eventual population genomic analyses. *Notebook author:* Pim Bongaerts. 
 
 *[Click here to go back to the overview](https://github.com/pimbongaerts/bermuda-rad/)*
 
-* **[B1 - PyRAD clustering] (#b1---pyrad-clustering)**
-	* [B1a - Raw sequence data] (#b1a---raw-sequence-data)
-	* [B1b - PyRAD clustering] (#b1b---pyrad-clustering)
-	* [B1c - FASTA with reference loci] (#b1c---fasta-with-reference-loci)
-* **[B2 - Filtering and QC of loci and SNPs] (#b2---filtering-and-qc-of-loci-and-snps)**
-	* [B2a - Remove *Symbiodinium* and other contamination] (#b2a---remove-symbiodinium-and-other-contamination)
-	* [B2b - Basic SNP QC and filtering] (#b2b---basic-snp-qc-and-filtering)
-	* [B2c - Check for clones] (#b2c---check-for-clones)
-	* [B2d - Minimum representation filter] (#b2d---minimum-representation-filter)
-	* [B2e - Check for deviations from HWE] (#b2e---check-for-deviations-from-hwe)
-	* [B2f - Final datasets] (#b2f---final-datasets)
-	* [B2g - Sample performance] (#b2g---sample-performance)
-* **[B3 - Outlier analyses] (#b3---outlier-analyses)**
-	* [B3a - Lositan] (#b3a---lositan)
-	* [B3b - BayeScan] (#b3b---bayescan)
-	* [B3c - Summary] (#b3c---summary)
-	* [B3d - Non-outlier dataset] (#b3d---non-outlier-dataset)
-	* [B3e - Outlier annotation] (#b3e---outlier-annotation)
-* **[B4 - Genetic structure] (#b4---genetic-structure)**
-	* [B4a - STRUCTURE] (#b4a---structure)
-	* [B4b - PCA] (#b4b---pca)
-	* [B4c - GD matrix] (#b4c---gd-matrix)
-	* [B4d - DAPC] (#b4d---dapc)
-* **[B5 - Additional analyses] (#b5---additional-analyses)**
-	* [B5a - Differentiation and diversity stats] (#b5a---differentiation-and-diversity-stats)
-	* [B5b - Admixture] (#b5b---admixture)
-	* [B5c - Symbiont typing] (#b5c---symbiont-typing)
-	* [B5d - Morphometrics] (#b5d---morphometrics)
+* **[B1 - PyRAD clustering](#b1---pyrad-clustering)**
+	* [B1a - Raw sequence data](#b1a---raw-sequence-data)
+	* [B1b - PyRAD clustering](#b1b---pyrad-clustering)
+	* [B1c - FASTA with reference loci](#b1c---fasta-with-reference-loci)
+* **[B2 - Filtering and QC of loci and SNPs](#b2---filtering-and-qc-of-loci-and-snps)**
+	* [B2a - Remove *Symbiodinium* and other contamination](#b2a---remove-symbiodinium-and-other-contamination)
+	* [B2b - Basic SNP QC and filtering](#b2b---basic-snp-qc-and-filtering)
+	* [B2c - Check for clones](#b2c---check-for-clones)
+	* [B2d - Minimum representation filter](#b2d---minimum-representation-filter)
+	* [B2e - Check for deviations from HWE](#b2e---check-for-deviations-from-hwe)
+	* [B2f - Final datasets](#b2f---final-datasets)
+	* [B2g - Sample performance](#b2g---sample-performance)
+* **[B3 - Outlier analyses](#b3---outlier-analyses)**
+	* [B3a - Lositan](#b3a---lositan)
+	* [B3b - BayeScan](#b3b---bayescan)
+	* [B3c - Summary](#b3c---summary)
+	* [B3d - Non-outlier dataset](#b3d---non-outlier-dataset)
+	* [B3e - Outlier annotation](#b3e---outlier-annotation)
+* **[B4 - Genetic structure](#b4---genetic-structure)**
+	* [B4a - STRUCTURE](#b4a---structure)
+	* [B4b - PCA](#b4b---pca)
+	* [B4c - GD matrix](#b4c---gd-matrix)
+	* [B4d - DAPC](#b4d---dapc)
+* **[B5 - Additional analyses](#b5---additional-analyses)**
+	* [B5a - Differentiation and diversity stats](#b5a---differentiation-and-diversity-stats)
+	* [B5b - Admixture](#b5b---admixture)
+	* [B5c - Symbiont typing](#b5c---symbiont-typing)
+	* [B5d - Morphometrics](#b5d---morphometrics)
 
-##B1 - PyRAD clustering
+## B1 - PyRAD clustering
 Note: location of raw sequence data (hosted separately on the [NBCI SRA](https://www.ncbi.nlm.nih.gov/bioproject/361144)) is referred to as `storage_server_path/...`.
 
-###B1a - Raw sequence data
+### B1a - Raw sequence data
 Replace barcodes of `fastq` files by actual sample names [using [fastq_barcodes2samplenames.py](https://github.com/pimbongaerts/radseq/blob/master/fastq_barcodes2samplenames.py) script]:
 	
 	$ fastq_barcodes2samplenames.py storage_server_path/afra [storage_server_path/afra_barcodes.txt]
@@ -63,7 +63,7 @@ Output number of reads for 6 failed samples (excluded from analyses) [using [fas
 	AFMWD6929H	50316 reads
 	
 	
-###B1b - PyRAD clustering
+### B1b - PyRAD clustering
 Run PyRAD clustering pipeline (includes QC, clustering and variant calling):
 
 	$ pyrad -p params.txt -s1234567
@@ -97,14 +97,14 @@ Output number of SNPs (given that header of PyRAD vcf is 12 lines) in `.vcf` fil
 	$ wc -l afra.vcf | awk '{print $1-12}' # number of SNPs
 	56244
 	
-###B1c - FASTA with reference loci
+### B1c - FASTA with reference loci
 Extract a single reference sequence (using first sample) for each RAD locus [using [pyrad2fasta.py](https://github.com/pimbongaerts/radseq/blob/master/pyrad2fasta.py) script]:
 
 	$ pyrad2fasta.py storage_server_path/afra/outfiles/afra.loci > afra_1c.fa
 
-##B2 - Filtering and QC of loci and SNPs
-###B2a - Remove *Symbiodinium* and other contamination
-#####Symbiodinium contamination
+## B2 - Filtering and QC of loci and SNPs
+### B2a - Remove *Symbiodinium* and other contamination
+##### Symbiodinium contamination
 Identify *Symbiodinium* contamination through a `blastn` comparison of RAD loci against the three references below (used rather than BWA mapping for increased sensitivity).
 
 * *Symbiodinium* subtraction reference (isolated from *Agaricia fragilis*, *Stephanocoenia intersepta* and other species; as detailed in notebook "[A - *Symbiodinium*](https://github.com/pimbongaerts/bermuda-rad/tree/master/A%20-%20Symbiodinium)")
@@ -141,7 +141,7 @@ Create list of all loci matching *Symbiodinium* references:
 	$ wc -l symbiodinium_loci_to_remove.txt # number of matching loci
 	1188 symbiodinium_loci_to_remove.txt
 
-#####Other potential contamination
+##### Other potential contamination
 Identify potential microbial contamination by `blastn` comparison against non-redundant NCBI database.
 
 Create output directory:
@@ -162,7 +162,7 @@ Create a list of loci that match phyla outside the Cnidaria:
 
 	$ grep -v "Cnidaria" nt_blastn_results/afra_2a_blastn_nt_match0.0001.txt | cut -f 1 > other_loci_to_remove.txt
 
-#####Remove potential contamination
+##### Remove potential contamination
 Remove loci matching *Symbiodinium* and non-Cnidaria from `.vcf` file [using [vcf_remove_chrom.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_remove_chrom.py) script]:
 
 	$ cat symbiodinium_loci_to_remove.txt other_loci_to_remove.txt | sort | uniq > all_loci_to_remove.txt
@@ -170,7 +170,7 @@ Remove loci matching *Symbiodinium* and non-Cnidaria from `.vcf` file [using [vc
 	    1485 all_loci_to_remove.txt
 	$ vcf_remove_chrom.py afra.vcf all_loci_to_remove.txt > afra_2a.vcf
 
-###B2b - Basic SNP QC and filtering
+### B2b - Basic SNP QC and filtering
 Remove singletons, doubletons (i.e. SNPs where the minor allele only occurs in a single individual and that individual is homozygotic for that allele) and monomorphic SNPs:
 	
 	$ vcftools --vcf afra_2a.vcf --singletons
@@ -216,7 +216,7 @@ Create a popfile from the current `.vcf` file [using [popfile_from_vcf.py](https
 
 	$ popfile_from_vcf.py afra_2b.vcf 4 5 > popfile_2b.txt
 
-###B2c - Check for clones
+### B2c - Check for clones
 Calculate allelic similarity between all pairs of individuals from unfiltered `.vcf` file to assess potential clones [using [vcf_clone_detect.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_clone_detect.py) script]:
 
 	$ vcf_clone_detect.py -v afra_2b.vcf -p popfile_2b.txt
@@ -312,14 +312,14 @@ Create popfile (`popfile_noclones_2c.txt`) for remaining samples (coded PX indiv
 	
 	$ popfile_from_vcf.py afra_2c.vcf 4 5 | sed 's/ PX/     PD/g' > popfile_test.txt
 
-###B2d - Minimum representation filter
+### B2d - Minimum representation filter
 Eliminate SNPs in `.vcf` that are genotyped for less than 50% of individuals in each population (rather than using an overall missing-data filter) [using [vcf_minrep_filter.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_minrep_filter.py) script]:
 
 	$ vcf_minrep_filter.py afra_2c.vcf popfile_noclones_2c.txt 0.5 afra_2d.vcf
 	1814 out of 5120 SNPs failing 0.5 threshold
 	Lowest overall proportion genotyped of remaining SNPs: 0.5463917525773195
 	
-###B2e - Check for deviations from HWE
+### B2e - Check for deviations from HWE
 Convert `.vcf` file to Arlequin format [using [vcf_spider.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_spider.py) script]:
 	
 	$ vcf_spider.py afra_2d.vcf popfile_noclones_2c.txt afra_2e.arp
@@ -353,7 +353,7 @@ Remove loci/CHROMs (in `afra_2e_elimchrom_uniq.txt`) and individual SNPs (in `af
 	$ vcf_remove_chrom.py afra_2d.vcf afra_2e_elimchrom_uniq.txt > afra_2e_temp1.vcf
 	$ vcftools --vcf afra_2e_temp1.vcf --exclude-positions afra_2e_elimpos.txt --recode --stdout > afra_2e.vcf
 
-###B2f - Final datasets
+### B2f - Final datasets
 Dataset no-clones, bi-allelic `afra_2f.vcf` (50% max. missing data per pop; reduced to bi-allelic as only 5 multi-allelic SNPs):
 	
 	$ vcftools --vcf afra_2e.vcf --min-alleles 2 --max-alleles 2 --recode --stdout > afra_2f.vcf
@@ -382,13 +382,13 @@ Dataset with-clones, bi-allelic `afra_wclon_2f.vcf`:
 	After filtering, kept 2568 out of a possible 5123 Sites
 	Run Time = 0.00 seconds
 
-###B2g - Sample performance
+### B2g - Sample performance
 Output number of genotyped and missing SNPs for each sample [using [vcf_missing_data.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_missing_data.py) script]:
 
 	$ vcf_missing_data.py afra_wclon_2f.vcf > afra_wclon_2f_stats.txt
 
-##B3 - Outlier analyses
-###B3a - Lositan
+## B3 - Outlier analyses
+### B3a - Lositan
 Convert no-clones dataset `afra_2f.vcf` to Lositan/Genepop format [using [vcf_spider.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_spider.py) script]:
 
 	$ vcf_spider.py afra_2f.vcf popfile_noclones_2c.txt afra_3a.lositan
@@ -404,7 +404,7 @@ Run the `Lositan` GUI (on Linux machine due to unresolved OSX bug) to assess out
 |`fdist_GS-GD.txt`|within Gurnet between depths|GS, GD|
 |`fdist_overall.txt`|between all populations|PS, PD, JS, JD, GS, GD, WD|
 
-###B3b - BayeScan
+### B3b - BayeScan
 Convert no-clones dataset `afra_2f.vcf` to BayeScan format [using [vcf_spider.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_spider.py) script]:
 
 	$ vcf_spider.py afra_2f.vcf popfile_noclones_2c.txt afra_3b.bayescan
@@ -414,7 +414,7 @@ Run `bayescan` on the overall dataset:
 	$ bayescan afra_3b.bayescan -threads 28
 	$ cp afra_3b.baye_fst.txt bayescan_overall.txt
 
-###B3c - Summary
+### B3c - Summary
 Summarise outlier analyses in a single table with boolean values (`TRUE` = significant outlier) [using [E - Scripts/bermuda_outliers_summary.py](../E\ -\ Scripts/bermuda_outliers_summary.py) script]:
 
 	$ python3 bermuda_outliers_summary.py afra_2f.vcf outlier_files/fdist_overall.txt outlier_files 0.01 0.99 > outlier_summary.txt
@@ -453,7 +453,7 @@ Extract Fdist & BayeScan outliers (that are not depth-outliers) and output genot
 	$ grep "FDIST_AND_BAYESCAN_OUTLIER" outlier_summary_types.txt | cut -f 2,3 > other_overall_outliers.txt
 	$ vcf_genotype_freqs.py afra_2f.vcf factors_afra_3e.txt other_overall_outliers.txt > afra_b3c_other_freqs.txt
 	
-###B3d - Non-outlier dataset
+### B3d - Non-outlier dataset
 Summarise outlier analyses but with less stringent threshold, into a single table with boolean values (`TRUE` = significant outlier) [using [E - Scripts/bermuda_outliers_summary.py](../E\ -\ Scripts/bermuda_outliers_summary.py) script and [E - Scripts/bermuda_outliers_classify.py](../E\ -\ Scripts/bermuda_outliers_classify.py) script]:
 
 	$ python3 bermuda_outliers_summary.py afra_2f.vcf outlier_files/fdist_overall.txt outlier_files 0.05 0.95 > outlier_summary.txt
@@ -474,7 +474,7 @@ Extract non-outlier SNPs (by eliminating all SNPs that were an overall outlier f
 	After filtering, kept 2269 out of a possible 2568 Sites
 	Run Time = 0.00 seconds
 
-###B3e - Outlier annotation
+### B3e - Outlier annotation
 Create FASTA file with outlier sequences (using `sed` to remove gaps) [using [fasta_include.py](https://github.com/pimbongaerts/radseq/blob/master/fasta_include.py) script]:
 
 	$ cut -f 1 depth_outliers.txt | sort > depth_outlier_chroms.txt
@@ -488,9 +488,9 @@ Blast outlier sequencess (using `blastn`) against the NCBI non-redundant databas
 	4482	1e-11	PREDICTED: Acropora digitifera phospholipase D1-like (LOC107352864), mRNA
 	8374	5e-11	PREDICTED: Acropora digitifera uncharacterized LOC107332840 (LOC107332840), mRNA
 
-##B4 - Genetic structure
-###B4a - STRUCTURE
-#####Overall dataset
+## B4 - Genetic structure
+### B4a - STRUCTURE
+##### Overall dataset
 Modify STRUCTURE's `mainparams` file (manually) and enter the number of unique CHROMs and total number of individuals:
 
 	$ tail -n +13 afra_2f.vcf | cut -f 1 | sort | uniq | wc -l
@@ -521,7 +521,7 @@ Run overall dataset (`afra_2f.vcf`) through STRUCTURE (for K = 2..7) [using the 
 	K = 6: MedMeaK 3.0 MaxMeaK 4 MedMedK 3.0 MaxMedK 4
 	K = 7: MedMeaK 2.5 MaxMeaK 3 MedMedK 2.5 MaxMedK 3
 
-#####"Neutral" dataset
+##### "Neutral" dataset
 Modify STRUCTURE's `mainparams` file (manually) and enter the number of unique CHROMs and total number of individuals:
 
 	$ tail -n +13 afra_neut_3d.vcf | cut -f 1 | sort | uniq | wc -l
@@ -552,24 +552,24 @@ Run the non-outlier ("neutral") dataset (`afra_neut_3d.vcf`) through STRUCTURE [
 	K = 6: MedMeaK 2.0 MaxMeaK 3 MedMedK 2.0 MaxMedK 3
 	K = 7: MedMeaK 1.0 MaxMeaK 2 MedMedK 1.0 MaxMedK 2
 
-###B4b - PCA
+### B4b - PCA
 Run a PCA on the overall dataset (`afra_2f.vcf`) using the `adegenet` package in R [detailed in [E - Scripts/bermuda_vcf2pca.R](../E\ -\ Scripts/bermuda_vcf2pca.R) script]:
 
 	
 	$ Rscript bermuda_vcf2pca.R afra_2f.vcf popfile_pca_4b.csv
 
-###B4c - GD matrix
+### B4c - GD matrix
 Calculate GD matrix (Hamming-distance) between individual samples (using dataset that includes clones `afra_wclon_2f.vcf`) [using [vcf_gdmatrix.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_gdmatrix.py) script]:
 
 	$ vcf_gdmatrix.py afra_wclon_2f.vcf popfile_wclon_ordered_4c.txt > afra_wclon_gd_4c.txt
 
-###B4d - DAPC
+### B4d - DAPC
 Run a DAPC on the overall dataset (`afra_2f.vcf`) using the `adegenet` package in R [detailed in [E - Scripts/bermuda_vcf2dapc.R](../E\ -\ Scripts/bermuda_vcf2dapc.R) script]:
 	
 	$ Rscript bermuda_vcf2dapc.R afra_2f.vcf popfile_pca_4b.csv.txt
 
-##B5 - Additional analyses 
-###B5a - Differentiation and diversity stats
+## B5 - Additional analyses 
+### B5a - Differentiation and diversity stats
 Calculate several statistics regarding differentiation in R using `hierfstat` and `adegenet` packages (as well as `vcfR` for importing `.vcf` file) [detailed in [E - Scripts/bermuda_diff_stats.R](../E\ -\ Scripts/bermuda_diff_stats.R) script]:
 
 	* General F-statistics and measures of heterozygosity
@@ -654,7 +654,7 @@ Calculate several statistics regarding differentiation in R using `hierfstat` an
 	alternative hypothesis: true location shift is not equal to 0
 
 
-###B5b - Admixture
+### B5b - Admixture
 Visualising patterns of admixture between shallow and deep individuals for the most divergent SNPs. Most divergent SNPs were selected by:
 
 * Rerunning STRUCTURE for only the eastern populations (two clusters)
@@ -688,7 +688,7 @@ Create a genotype matrix for loci that were identified as outliers (outputted fi
 	$ tail -n +2 afra_matrix_5b.txt | wc -l  # number of SNPs in matrix
      133
 
-###B5c - Symbiont typing
+### B5c - Symbiont typing
 Representative samples of *Agaricia fragilis* (n = 45) from the 7 populations were sequenced for the *Symbiodinium COX1* region. Only a single haplotype was recovered:
 
 	>Agaricia_COX1_HAPA
@@ -715,5 +715,5 @@ Extract those loci that are in common from the PyRAD `.loci` files and trim to 7
 
 Visual assessment of `afra_sym_chloroplast_trim.loci` alignment confirms that no variable sites are present in these 3 loci. Mitochondrial and chloroplast haplotypes for each sample are listed in: `afra_symbionts.txt`.
 
-###B5d - Morphometrics
+### B5d - Morphometrics
 Corallite diameter and density were measured for representative samples of *Agaricia fragilis* (n = 54) with 5 pseudoreplicate measurements per sample. Averaged values (across the 5 measurements) for each specimen are listed in `afra_morpho_data.csv`.

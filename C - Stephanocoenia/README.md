@@ -1,40 +1,40 @@
-#C - Stephanocoenia intersepta
+# C - Stephanocoenia intersepta
 *Contents:* Details the processing and analyses of the *Stephanocoenia intersepta* dataset, from raw sequences to eventual population genomic analyses. *Notebook author:* Pim Bongaerts. 
 
 *[Click here to go back to the overview](https://github.com/pimbongaerts/bermuda-rad/)*
 
-* **[C1 - PyRAD clustering] (#c1---pyrad-clustering)**
-	* [C1a - Raw sequence data] (#c1a---raw-sequence-data)
-	* [C1b - PyRAD clustering] (#c1b---pyrad-clustering)
-	* [C1c - FASTA with reference loci] (#c1c---fasta-with-reference-loci)
-* **[C2 - Filtering and QC of loci and SNPs] (#c2---filtering-and-qc-of-loci-and-snps)**
-	* [C2a - Remove *Symbiodinium* and other contamination] (#c2a---remove-symbiodinium-and-other-contamination)
-	* [C2b - Basic SNP QC and filtering] (#c2b---basic-snp-qc-and-filtering)
-	* [C2c - Remove low-performance individuals and check for clones] (#c2c---remove-low-performance-individuals-and-check-for-clones)
-	* [C2d - Minimum representation filter] (#c2d---minimum-representation-filter)
-	* [C2e - Check for deviations from HWE] (#c2e---check-for-deviations-from-hwe)
-	* [C2f - Final datasets] (#c2f---final-datasets)
-	* [C2g - Sample performance] (#c2g---sample-performance)
-* **[C3 - Outlier analyses] (#c3---outlier-analyses)**
-	* [C3a - Lositan] (#c3a---lositan)
-	* [C3b - BayeScan] (#c3b---bayescan)
-	* [C3c - Summary] (#c3c---summary)
-	* [C3d - Non-outlier dataset] (#c3d---non-outlier-dataset)
-* **[C4 - Genetic structure] (#c4---genetic-structure)**
-	* [C4a - STRUCTURE] (#c4a---structure)
-	* [C4b - PCA] (#c4b---pca)
-	* [C4c - GD matrix] (#c4c---gd-matrix)
-	* [C4d - DAPC] (#c4d---dapc)
-* **[C5 - Additional analyses] (#c5---additional-analyses)**
-	* [C5a - Differentiation and diversity stats] (#c5a---differentiation-and-diversity-stats)
-	* [C5b - Symbiont typing] (#c5c---symbiont-typing)
-	* [C5c - Morphometrics] (#c5d---morphometrics)
+* **[C1 - PyRAD clustering](#c1---pyrad-clustering)**
+	* [C1a - Raw sequence data](#c1a---raw-sequence-data)
+	* [C1b - PyRAD clustering](#c1b---pyrad-clustering)
+	* [C1c - FASTA with reference loci](#c1c---fasta-with-reference-loci)
+* **[C2 - Filtering and QC of loci and SNPs](#c2---filtering-and-qc-of-loci-and-snps)**
+	* [C2a - Remove *Symbiodinium* and other contamination](#c2a---remove-symbiodinium-and-other-contamination)
+	* [C2b - Basic SNP QC and filtering](#c2b---basic-snp-qc-and-filtering)
+	* [C2c - Remove low-performance individuals and check for clones](#c2c---remove-low-performance-individuals-and-check-for-clones)
+	* [C2d - Minimum representation filter](#c2d---minimum-representation-filter)
+	* [C2e - Check for deviations from HWE](#c2e---check-for-deviations-from-hwe)
+	* [C2f - Final datasets](#c2f---final-datasets)
+	* [C2g - Sample performance](#c2g---sample-performance)
+* **[C3 - Outlier analyses](#c3---outlier-analyses)**
+	* [C3a - Lositan](#c3a---lositan)
+	* [C3b - BayeScan](#c3b---bayescan)
+	* [C3c - Summary](#c3c---summary)
+	* [C3d - Non-outlier dataset](#c3d---non-outlier-dataset)
+* **[C4 - Genetic structure](#c4---genetic-structure)**
+	* [C4a - STRUCTURE](#c4a---structure)
+	* [C4b - PCA](#c4b---pca)
+	* [C4c - GD matrix](#c4c---gd-matrix)
+	* [C4d - DAPC](#c4d---dapc)
+* **[C5 - Additional analyses](#c5---additional-analyses)**
+	* [C5a - Differentiation and diversity stats](#c5a---differentiation-and-diversity-stats)
+	* [C5b - Symbiont typing](#c5c---symbiont-typing)
+	* [C5c - Morphometrics](#c5d---morphometrics)
 
 
-##C1 - PyRAD clustering
+## C1 - PyRAD clustering
 Note: location of raw sequence data (hosted separately on the [NBCI SRA](https://www.ncbi.nlm.nih.gov/bioproject/361144)) is referred to as `storage_server_path/...`.
 
-###C1a - Raw sequence data
+### C1a - Raw sequence data
 Replace barcodes of `fastq` files by actual sample names [using [fastq_barcodes2samplenames.py](https://github.com/pimbongaerts/radseq/blob/master/fastq_barcodes2samplenames.py) script]:
 	
 	$ fastq_barcodes2samplenames.py storage_server_path/sint storage_server_path/sint_barcodes.txt
@@ -60,7 +60,7 @@ Output number of reads for 4 failed samples (excluded from analyses) [using [fas
 	SIMWD6973H	4217 reads
 	
 	
-###C1b - PyRAD clustering
+### C1b - PyRAD clustering
 Run PyRAD clustering pipeline (includes QC, clustering and variant calling):
 
 	$ pyrad -p params.txt -s1234567
@@ -94,14 +94,14 @@ Output number of SNPs (given that header of PyRAD vcf is 12 lines) in `.vcf` fil
 	$ wc -l sint.vcf | awk '{print $1-12}' # number of SNPs
 	57869
 	
-###C1c - FASTA with reference loci
+### C1c - FASTA with reference loci
 Extract a single reference sequence (using first sample) for each RAD locus [using [pyrad2fasta.py](https://github.com/pimbongaerts/radseq/blob/master/pyrad2fasta.py) script]:
 
 	$ pyrad2fasta.py storage_server_path/sint/outfiles/sint.loci > sint_1c.fa
 
-##C2 - Filtering and QC of loci and SNPs
-###C2a - Remove *Symbiodinium* contamination
-#####Symbiodinium contamination
+## C2 - Filtering and QC of loci and SNPs
+### C2a - Remove *Symbiodinium* contamination
+##### Symbiodinium contamination
 Identify *Symbiodinium* contamination through a `blastn` comparison of RAD loci against the three references below (used rather than BWA mapping for increased sensitivity).
 
 * *Symbiodinium* subtraction reference (isolated from *Agaricia fragilis*, *Stephanocoenia intersepta* and other species; as detailed in notebook "[A - *Symbiodinium*](https://github.com/pimbongaerts/bermuda-rad/tree/master/A%20-%20Symbiodinium)")
@@ -138,7 +138,7 @@ Get list of all loci matching *Symbiodinium* references:
 	$ wc -l loci_to_remove.txt # number of matching loci
 	1088 loci_to_remove.txt
 
-#####Other potential contamination
+##### Other potential contamination
 Identify potential microbial contamination by `blastn` comparison against non-redundant NCBI database.
 
 Create output directory:
@@ -159,7 +159,7 @@ Create a list of loci that match phyla outside the Cnidaria:
 
 	$ grep -v "Cnidaria" nt_blastn_results/sint_2a_blastn_nt_match0.0001.txt | cut -f 1 > other_loci_to_remove.txt
 
-#####Remove potential contamination
+##### Remove potential contamination
 Remove loci matching *Symbiodinium* and non-Cnidaria from `.vcf` file [using [vcf_remove_chrom.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_remove_chrom.py) script]:
 
 	$ cat symbiodinium_loci_to_remove.txt other_loci_to_remove.txt | sort | uniq > all_loci_to_remove.txt
@@ -167,7 +167,7 @@ Remove loci matching *Symbiodinium* and non-Cnidaria from `.vcf` file [using [vc
 		1223 all_loci_to_remove.txt
 	$ vcf_remove_chrom.py sint.vcf all_loci_to_remove.txt > sint_2a.vcf
 
-###C2b - Basic SNP QC and filtering
+### C2b - Basic SNP QC and filtering
 Remove singletons, doubletons (i.e. SNPs where the minor allele only occurs in a single individual and that individual is homozygotic for that allele) and monomorphic SNPs:
 	
 	$ vcftools --vcf sint_2a.vcf --singletons
@@ -212,7 +212,7 @@ Create a popfile from the current `.vcf` file [using [popfile_from_vcf.py](https
 
 	$ popfile_from_vcf.py sint_2b.vcf 4 5 > popfile_2b.txt
 
-###C2c - Remove low-performance individuals and check for clones
+### C2c - Remove low-performance individuals and check for clones
 Assessed missing data for individuals [using [vcf_missing_data.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_missing_data.py) script]:
 
 	$ vcf_missing_data.py sint_2b.vcf | tail -n +1 | sort -n --key=5 | head -n 10
@@ -287,7 +287,7 @@ Only the Curacao samples are pulled out as being a lot more similar to each othe
 
 	$ mv sint_2c_temp1.vcf sint_2c.vcf
 
-###C2d - Minimum representation filter
+### C2d - Minimum representation filter
 Eliminate SNPs in `.vcf` that are genotyped for less than 50% of individuals in each population (rather than using an overall missing-data filter) [using [vcf_minrep_filter.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_minrep_filter.py) script]:
 
 	$ vcf_minrep_filter.py sint_2c.vcf popfile_withCU_2d.txt 0.5 sint_2d.vcf
@@ -302,7 +302,7 @@ Before continuing with further QC (where Curacao individuals are not considered)
 	of which 27 SNPs were alternatively fixed in the reference samples [Curacao]
 	and 25 SNPs were variable in the reference samples [Curacao].
 	
-###C2e - Check for deviations from HWE
+### C2e - Check for deviations from HWE
 Removed Curacao individuals from dataset (and manually removed them from popfile):
 
 	$ vcftools --vcf sint_2d.vcf --remove-indv SICB155378H --remove-indv SICB155507H --recode --stdout > sint_2e_temp1.vcf
@@ -340,7 +340,7 @@ Remove loci/CHROMs (in `sint_2e_elimchrom_uniq.txt`)  and individual SNPs (in `s
 	$ vcf_remove_chrom.py sint_2e_temp1.vcf sint_2e_elimchrom_uniq.txt > sint_2e_temp2.vcf
 	$ vcftools --vcf sint_2e_temp2.vcf --exclude-positions sint_2e_elimpos.txt --recode --stdout > sint_2e.vcf
 
-###C2f - Final datasets
+### C2f - Final datasets
 Dataset (no clones) multi-allelic, without Curacao samples `sint_2f.vcf` (50% max. missing data per pop; monomorphic sites [related to exclusion of Curacao] removed):
 	
 	$ vcftools --vcf sint_2e.vcf --mac 1  --recode --stdout > sint_2f.vcf
@@ -369,13 +369,13 @@ Dataset (no clones) bi-allelic with Curacao samples `sint_withCU_2f.vcf`:
 	After filtering, kept 7599 out of a possible 7810 Sites
 	Run Time = 0.00 seconds
 
-###C2g - Sample performance
+### C2g - Sample performance
 Output number of genotyped and missing SNPs for each sample [using [vcf_missing_data.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_missing_data.py) script]:
 
 	$ vcf_missing_data.py sint_2f.vcf > sint_2f_stats.txt
 
-##C3 - Outlier analyses
-###C3a - Lositan
+## C3 - Outlier analyses
+### C3a - Lositan
 Convert no-clones dataset `sint_bi_2f.vcf` to Lositan/Genepop format [using [vcf_spider.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_spider.py) script]:
 
 	$ vcf_spider.py sint_bi_2f.vcf popfile_2f.txt sint_3a.lositan
@@ -391,7 +391,7 @@ Run the `Lositan` GUI (on Linux machine due to unresolved OSX bug) to assess out
 |`fdist_GS-GD.txt`|within Gurnet between depths|GS, GD|
 |`fdist_overall.txt`|between all populations|PS, PD, JS, JD, GS, GD, WD|
 
-###C3b - BayeScan
+### C3b - BayeScan
 Converted no-clones dataset `sint_bi_2f.vcf` to BayeScan format [using [vcf_spider.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_spider.py) script]:
 
 	$ vcf_spider.py sint_bi_2f.vcf popfile_2f.txt sint_3b.bayescan
@@ -401,7 +401,7 @@ Ran `bayescan` on the overall dataset:
 	$ bayescan sint_3b.bayescan -threads 28
 	$ cp sint_3b.baye_fst.txt bayescan_overall.txt
 
-###C3c - Summary
+### C3c - Summary
 Summarise outlier analyses in a single table with boolean values (`TRUE` = significant outlier) [using [E - Scripts/bermuda_outliers_summary.py](../E\ -\ Scripts/bermuda_outliers_summary.py) script]:
 
 	$ python3 bermuda_outliers_summary.py sint_bi_2f.vcf outlier_files/fdist_overall.txt outlier_files 0.01 0.99 > outlier_summary.txt
@@ -435,7 +435,7 @@ Calculate genotype frequencies of selected outliers [using [vcf_genotype_freqs.p
       
 	$ vcf_genotype_freqs.py sint_bi_2f.vcf factors_3c.txt outlier_snps_to_plot.txt > sint_3c_freqs.txt
 
-###C3d - Non-outlier dataset
+### C3d - Non-outlier dataset
 Summarise outlier analyses but with less stringent threshold, into a single table with boolean values (`TRUE` = significant outlier) [using [E - Scripts/bermuda_outliers_summary.py](../E\ -\ Scripts/bermuda_outliers_summary.py) script and [E - Scripts/bermuda_outliers_classify.py](../E\ -\ Scripts/bermuda_outliers_classify.py) script]:
 
 	$ python3 bermuda_outliers_summary.py sint_bi_2f.vcf outlier_files/fdist_overall.txt outlier_files 0.05 0.95 > outlier_summary.txt
@@ -455,9 +455,9 @@ Extract non-outlier SNPs (by eliminating all SNPs that were an overall outlier f
 	After filtering, kept 7106 out of a possible 7547 Sites
 	Run Time = 0.00 seconds
 
-##C4 - Genetic structure
-###C4a - STRUCTURE
-#####Overall dataset
+## C4 - Genetic structure
+### C4a - STRUCTURE
+##### Overall dataset
 Modify STRUCTURE's `mainparams` file (manually) and enter the number of unique CHROMs and total number of individuals:
 
 	$ tail -n +13 sint_2f.vcf | cut -f 1 | sort | uniq | wc -l
@@ -488,7 +488,7 @@ Run overall dataset (`sint_2f.vcf `) through STRUCTURE (for K = 2..7) [using the
 	K = 6: MedMeaK 1.0 MaxMeaK 2 MedMedK 1.0 MaxMedK 2
 	K = 7: MedMeaK 0.0 MaxMeaK 2 MedMedK 0.0 MaxMedK 2
 
-#####"Neutral" dataset
+##### "Neutral" dataset
 Modify STRUCTURE's `mainparams` file (manually) and enter the number of unique CHROMs and total number of individuals:
 
 	$ tail -n +13 sint_neut_3d.vcf | cut -f 1 | sort | uniq | wc -l
@@ -510,7 +510,7 @@ Run the non-outlier ("neutral") dataset (`sint_neut_3d.vcf `) through STRUCTURE 
 	K = 3: MedMeaK 1.0 MaxMeaK 1 MedMedK 1.0 MaxMedK 1
 	K = 4: MedMeaK 1.0 MaxMeaK 2 MedMedK 1.0 MaxMedK 2
 
-#####90th percentile
+##### 90th percentile
 Extract 90th percentile using overall F<sub>ST</sub> values as calculated by Lositan (using bi-allelic datafile `sint_bi_2f.vcf`) [using [vcf_splitfst.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_splitfst.py) script]:
 
 	$ vcf_splitfst.py sint_bi_2f.vcf fdist_overall.txt 90 100 
@@ -550,7 +550,7 @@ Run the 90th percentile dataset (`sint_bi_2f_fst90_100.vcf`) through STRUCTURE [
 	K = 6: MedMeaK 6.0 MaxMeaK 6 MedMedK 6.0 MaxMedK 6
 	K = 7: MedMeaK 7.0 MaxMeaK 7 MedMedK 7.0 MaxMedK 7
 
-#####90th percentile randomized
+##### 90th percentile randomized
 Shuffle around population assignment of individuals [using [popfile_toggleassign.py](https://github.com/pimbongaerts/radseq/blob/master/popfile_toggleassign.py) script]:
 
 	$ popfile_toggleassign.py popfile_2f.txt > toggle_popfile_2f.txt
@@ -599,23 +599,23 @@ Run the shuffled 90th percentile dataset (`sint_bi_rand_2f_fst90_100.vcf`) throu
 	K = 6: MedMeaK 6.0 MaxMeaK 6 MedMedK 6.0 MaxMedK 6
 	K = 7: MedMeaK 7.0 MaxMeaK 7 MedMedK 7.0 MaxMedK 7
 
-###C4b - PCA
+### C4b - PCA
 Run a PCA on the overall dataset (`sint_bi_2f.vcf`) using the `adegenet` package in R [detailed in [E - Scripts/bermuda_vcf2pca.R](../E\ -\ Scripts/bermuda_vcf2pca.R) script]:
 	
 	$ Rscript bermuda_vcf2pca.R sint_bi_2f.vcf popfile_pca_4b.csv
 
-###C4c- GD matrix
+### C4c- GD matrix
 Calculate GD matrix (Hamming-distance) between individual samples (of dataset including Curacao) [using [vcf_gdmatrix.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_gdmatrix.py) script]:
 
 	$ vcf_gdmatrix.py sint_withCU_2f.vcf popfile_depth_4c.txt > sint_depth_withCU_gd_4c.txt
 
-###C4d - DAPC
+### C4d - DAPC
 Run a DAPC on the overall dataset (`sint_bi_2f.vcf`) using the `adegenet` package in R [detailed in [E - Scripts/bermuda_vcf2dapc.R](../E\ -\ Scripts/bermuda_vcf2dapc.R) script]:
 	
 	$ Rscript DAPC_4d.R sint_bi_2f.vcf popfile_pca_4b.csv
 
-##C5 - Additional analyses
-###C5a - Differentiation and diversity stats
+## C5 - Additional analyses
+### C5a - Differentiation and diversity stats
 Reduced missing data by retaining only loci that are genotyped for at least 80% of individuals in each population [using [vcf_minrep_filter.py](https://github.com/pimbongaerts/radseq/blob/master/vcf_minrep_filter.py) script]:
 
 	$ vcf_minrep_filter.py sint_bi_2f.vcf popfile_2f.txt 0.8 sint_bi_5a.vcf
@@ -678,7 +678,7 @@ Calculate several statistics regarding differentiation in R using `hierfstat` an
 	6 0.02791249 0.02463953 0.02750751 0.02655480 0.02663476
 	7 0.02945874 0.02848730 0.03148605 0.03001721 0.02977629 0.02716061
 
-###C5b - Symbiont typing
+### C5b - Symbiont typing
 Representative samples of *Stephanocoenia intersepta* (n = 33) from the 7 populations were sequenced for the *Symbiodinium COX1* region. Two haplotypes were recovered:
 
 	>Stephanocoenia_COX1_HAPB
@@ -726,5 +726,5 @@ Visual assessment of `sint_sym_chloroplast_trim.loci` alignment identifies 3 dif
 	
 Mitochondrial and chloroplast haplotypes for each sample are listed in: `sint_symbionts.txt`.
 
-###B5c - Morphometrics
+### C5c - Morphometrics
 Corallite diameter and density were measured for representative samples of *Stephanocoenia intersepta* (n = 34) with 5 pseudoreplicate measurements per sample. Averaged values (across the 5 measurements) for each specimen are listed in `sint_morpho_data.csv`.

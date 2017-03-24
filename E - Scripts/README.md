@@ -1,4 +1,4 @@
-#E - Scripts
+# E - Scripts
 *Contents:*  - Several custom scripts (other than those in *[RAD - Python scripts](https://github.com/pimbongaerts/radseq)*) specific to the analysis of the Bermuda dataset. *Notebook author:* Pim Bongaerts.
 
 * **[bermuda\_outliers\_summary.py](bermuda_outliers_summary.py)** - Creates a summary of FDist / BayeScan outlier analyses

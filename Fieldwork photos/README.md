@@ -1,4 +1,4 @@
-#Fieldwork photos
+# Fieldwork photos
 *Contents:*  - Several panorama shots of the Bermuda seascape and photos of the fieldwork in Bermuda (with credit information after the caption). High-resolution versions can be found [here](original_size/) and additional B-roll video footage can be found [here](video_b_roll).
 
 *[Click here to go back to the overview](https://github.com/pimbongaerts/bermuda-rad/)*
