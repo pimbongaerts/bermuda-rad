@@ -8,22 +8,22 @@
 
 ## Electronic lab notebook contents
 
-**[A - *Symbiodinium*](A - Symbiodinium/)** - 
+**[A - *Symbiodinium*](https://github.com/pimbongaerts/bermuda-rad/tree/master/A%20-%20Symbiodinium)** - 
 Details the analysis of the sequence data for the FACS-isolated *Symbiodinium* that are used as subtraction datasets.
 
-**[B - *Agaricia*](/B - Agaricia/)** - 
+**[B - *Agaricia*](https://github.com/pimbongaerts/bermuda-rad/tree/master/B%20-%20Agaricia)** - 
 Details the processing and analyses of the *Agaricia fragilis* dataset, from raw sequences to eventual population genomic analyses.
 
-**[C - *Stephanocoenia*](/C - Stephanocoenia/)** - 
+**[C - *Stephanocoenia*](https://github.com/pimbongaerts/bermuda-rad/tree/master/C%20-%20Stephanocoenia)** - 
 Details the processing and analyses of the *Stephanocoenia intersepta* dataset, from raw sequences to eventual population genomic analyses.
 
-**[D - Figures](/D - Figures/)** - 
+**[D - Figures](https://github.com/pimbongaerts/bermuda-rad/tree/master/D%20-%20Figures)** - 
 Contains the data and scripts to produce the manuscript figures.
 
-**[E - Scripts](/E - Scripts/)** - 
+**[E - Scripts](https://github.com/pimbongaerts/bermuda-rad/tree/master/E%20-%20Scripts)** - 
 Several custom scripts (other than those in *[RADseq script library](https://github.com/pimbongaerts/radseq)*) specific to the analysis of the Bermuda dataset.
 
-**[F - Protocols](/F - Protocols/)** - 
+**[F - Protocols](https://github.com/pimbongaerts/bermuda-rad/tree/master/F%20-%20Protocols)** - 
 Details the lab protocols for gDNA isolation and fluorescence-activated cell sorting.
 
 ### Additional resources
@@ -32,7 +32,7 @@ Details the lab protocols for gDNA isolation and fluorescence-activated cell sor
 
 **[RADseq script library (GitHub)](https://github.com/pimbongaerts/radseq)** - Separate github repository with generic Python scripts used throughout the electronic lab notebook (A-C).
 
-**[Fieldwork Photos (Gallery)](Fieldwork photos)** - Several photos of the fieldwork in Bermuda
+**[Fieldwork Photos (Gallery)](https://github.com/pimbongaerts/bermuda-rad/tree/master/Fieldwork%20photos)** - Several photos of the fieldwork in Bermuda
 
 ## Explanation
 Each (sub)heading in the electronic notebooks (listed above) refers to a directory in the repository, outlining the analysis workflow in sequential order.
