@@ -8,22 +8,22 @@
 
 ## Electronic lab notebook contents
 
-**[A - *Symbiodinium*](A - Symbiodinium)** - 
+**[A - *Symbiodinium*](/A - Symbiodinium/)** - 
 Details the analysis of the sequence data for the FACS-isolated *Symbiodinium* that are used as subtraction datasets.
 
-**[B - *Agaricia*](B - Agaricia)** - 
+**[B - *Agaricia*](/B - Agaricia/)** - 
 Details the processing and analyses of the *Agaricia fragilis* dataset, from raw sequences to eventual population genomic analyses.
 
-**[C - *Stephanocoenia*](C - Stephanocoenia)** - 
+**[C - *Stephanocoenia*](/C - Stephanocoenia/)** - 
 Details the processing and analyses of the *Stephanocoenia intersepta* dataset, from raw sequences to eventual population genomic analyses.
 
-**[D - Figures](D - Figures)** - 
+**[D - Figures](/D - Figures/)** - 
 Contains the data and scripts to produce the manuscript figures.
 
-**[E - Scripts](E - Scripts)** - 
+**[E - Scripts](/E - Scripts/)** - 
 Several custom scripts (other than those in *[RADseq script library](https://github.com/pimbongaerts/radseq)*) specific to the analysis of the Bermuda dataset.
 
-**[F - Protocols](F - Protocols)** - 
+**[F - Protocols](/F - Protocols/)** - 
 Details the lab protocols for gDNA isolation and fluorescence-activated cell sorting.
 
 ### Additional resources
